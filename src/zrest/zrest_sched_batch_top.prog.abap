@@ -14,8 +14,8 @@ TABLES: zrest_monitor,    "Monitor
 
 TYPES: gty_zmessageid TYPE RANGE OF zrest_monitor-zmessageid.
 
-DATA: gt_zmessageid   TYPE STANDARD TABLE OF zmid,
-      gs_zmessageid   TYPE zmid,
+DATA: gt_zmessageid   TYPE STANDARD TABLE OF zazmid,
+      gs_zmessageid   TYPE zazmid,
       gv_batch_jobcnt TYPE i,
       gv_rec_cnt      TYPE i,
       gv_rc           TYPE sy-subrc,
@@ -29,7 +29,7 @@ DATA: gv_jobno(03)    TYPE n,
 
 TYPES: BEGIN OF ty_zmid,
          batch_num  TYPE i,
-         zmessageid TYPE zmid.
+         zmessageid TYPE zazmid.
 TYPES: END OF ty_zmid.
 
 DATA: gt_zmid_batch TYPE STANDARD TABLE OF ty_zmid,

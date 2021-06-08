@@ -6,7 +6,7 @@ public section.
 
   class-methods GET_CALLDATA_FROMDB
     importing
-      !MESSAGE_ID type ZMID
+      !MESSAGE_ID type ZAZMID
     exporting
       !PAYLOAD type ZRT_PAYLOAD
       !MONITOR type ZREST_MONITOR .

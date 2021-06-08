@@ -9,12 +9,12 @@ CLASS zcl_rest_utility_class DEFINITION
     CLASS-METHODS download_payload_file
       IMPORTING
         !xstring    TYPE xstring
-        !message_id TYPE zmid
+        !message_id TYPE zazmid
       RAISING
         zcx_http_client_failed .
     METHODS retry
       IMPORTING
-        !message_id     TYPE zmid
+        !message_id     TYPE zazmid
         !method         TYPE zinterface_method
         !from_scheduler TYPE char1 OPTIONAL
       RAISING
@@ -27,7 +27,7 @@ CLASS zcl_rest_utility_class DEFINITION
         VALUE(description) TYPE string .
     CLASS-METHODS show_payload
       IMPORTING
-        !message_id TYPE zmid
+        !message_id TYPE zazmid
         !response   TYPE c OPTIONAL
       RAISING
         zcx_http_client_failed .
@@ -44,7 +44,7 @@ CLASS zcl_rest_utility_class DEFINITION
         VALUE(static_headers) TYPE tihttpnvp .
     CLASS-METHODS show_submitted_headers
       IMPORTING
-        !message_id TYPE zmid
+        !message_id TYPE zazmid
       RAISING
         zcx_http_client_failed .
     CLASS-METHODS unprocessed_data
@@ -77,7 +77,7 @@ CLASS zcl_rest_utility_class DEFINITION
         VALUE(global_params) TYPE zrest_global .
     CLASS-METHODS retry_log
       IMPORTING
-        !message_id TYPE zmid
+        !message_id TYPE zazmid
         !response   TYPE c OPTIONAL
       RAISING
         zcx_http_client_failed .
@@ -100,10 +100,10 @@ CLASS zcl_rest_utility_class DEFINITION
 
     CLASS-METHODS get_db_data
       IMPORTING
-        !message_id TYPE zmid .
+        !message_id TYPE zazmid .
     CLASS-METHODS check_messageid
       IMPORTING
-        !message_id TYPE zmid .
+        !message_id TYPE zazmid .
     CLASS-METHODS obfuscate
       IMPORTING
         !input        TYPE xstring
