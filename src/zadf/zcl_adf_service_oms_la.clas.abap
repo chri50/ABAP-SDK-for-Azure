@@ -187,30 +187,6 @@ CLASS ZCL_ADF_SERVICE_OMS_LA IMPLEMENTATION.
 ** get time separated by :
     CONCATENATE lv_tstmp_s+8(2)  lv_tstmp_s+10(2)  lv_tstmp_s+12(2)  INTO lv_time SEPARATED BY lc_col.
 
-** Capitalise the first letter of month and day
-    ASSIGN lv_day(1) TO <fs_date>.
-    IF <fs_date> IS ASSIGNED.
-      TRANSLATE <fs_date> TO UPPER CASE.
-      UNASSIGN <fs_date>.
-    ENDIF.
-
-    ASSIGN lv_date(1) TO <fs_date>.
-    IF <fs_date> IS ASSIGNED.
-      TRANSLATE <fs_date> TO UPPER CASE.
-      UNASSIGN <fs_date>.
-    ENDIF.
-
-    ASSIGN lv_date+1(2) TO <fs_date>.
-    IF <fs_date> IS ASSIGNED.
-      TRANSLATE <fs_date> TO LOWER CASE.
-      UNASSIGN <fs_date>.
-    ENDIF.
-
-    ASSIGN lv_day+1(2) TO <fs_date>.
-    IF <fs_date> IS ASSIGNED.
-      TRANSLATE <fs_date> TO LOWER CASE.
-      UNASSIGN <fs_date>.
-    ENDIF.
 
 ** Add ',' to day
     CONCATENATE lv_day(3) lc_com INTO lv_day_name.
@@ -218,8 +194,8 @@ CLASS ZCL_ADF_SERVICE_OMS_LA IMPLEMENTATION.
 
 ** make timestamp in RFC1123
     CONCATENATE lv_day_name
-                lv_date+4(2)
-                lv_date(3)
+                lv_date(2)
+                lv_date+3(3)
                 lv_date+7(4)
                 lv_time
                 lc_gmt
