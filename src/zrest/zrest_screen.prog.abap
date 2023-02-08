@@ -17,6 +17,18 @@
 *----------------------------------------------------------------------*
 * 12|08|2016|V-JAVEDA  |2163894 | MS2K948543 | Enhance delete function
 *----------------------------------------------------------------------*
+* 06|25|2016|V-MOSN    |4668161 | SMTK905370 | Fix Correlation ID Filter
+*                                              in REST Framework
+*----------------------------------------------------------------------*
+* 07|02|2019|V-ANYALL  |4668157 | SMTK905411 | Selection screen enhan. *
+*----------------------------------------------------------------------*
+* 08|15|2019|V-MOSN    |4668152 | SMTK905463 | Disply Tot Records Count*
+*----------------------------------------------------------------------*
+* 09|29|2022|V-GUPTASHIV |      | MS1K9A7DJR | logic to check the      *
+**                                             authorization to        *
+*                                              view/download           *
+*                                              the payload             *
+*----------------------------------------------------------------------*
 *&---------------------------------------------------------------------*
 *& Report  ZREST_SCREEN
 *&
@@ -35,8 +47,8 @@
 * with the lights columnn added to show if the request was a
 *success or error.*****************************************
   TYPES: BEGIN OF ty.
-          INCLUDE TYPE zrest_monitor.
-  TYPES   : lights(1) TYPE c.
+           INCLUDE TYPE zrest_monitor.
+           TYPES   : lights(1) TYPE c.
   TYPES:  END OF ty.
 
 ***********************************************************
@@ -46,9 +58,10 @@
         wa        TYPE ty,
         w_variant TYPE disvariant, "Variant
         w_layout  TYPE lvc_s_layo. "Layout structure
-  DATA : lv_textid TYPE REF TO zcx_http_client_failed,
+  DATA : lv_textid      TYPE REF TO zcx_http_client_failed,
          lv_clnt_failed TYPE REF TO zcx_http_client_failed,
-         lv_text2  TYPE scx_t100key.
+         lv_text2       TYPE scx_t100key,
+         gv_lines       TYPE i.                             "Added: SMTK905525
 
   TABLES zrest_config. "Include table zrest_config
   DATA: ok_code           LIKE sy-ucomm, "capture the user action
@@ -74,11 +87,11 @@
       METHODS:
         "Append own buttons on toolbar
         handle_toolbar
-                      FOR EVENT toolbar OF cl_gui_alv_grid
+                    FOR EVENT toolbar OF cl_gui_alv_grid
           IMPORTING e_object e_interactive,
         "Handle user events
         handle_user_command
-                      FOR EVENT user_command OF cl_gui_alv_grid
+                    FOR EVENT user_command OF cl_gui_alv_grid
           IMPORTING e_ucomm,
         get_data.
 
@@ -95,22 +108,26 @@
         w_compdate TYPE ty-zcompdate,
         w_comptime TYPE ty-zcomptime,
         w_id       TYPE zrest_monitor-businessid,
-        w_httpst   TYPE ty-httpstatus.   "v-javeda - MS2K948543
+        w_httpst   TYPE ty-httpstatus,   "v-javeda - MS2K948543
+        w_subdt    TYPE ty-submit_date,  "+SMTK905411/#VSO 4668157
+        w_subt     TYPE ty-submit_time.  "+SMTK905411/#VSO 4668157
   DATA: lt_tab TYPE TABLE OF zrest_config."v-javeda - MS2K948543 "for F4 values
   "Start of Selection Screen
-  SELECTION-SCREEN: BEGIN OF BLOCK blk0 WITH FRAME TITLE text-000.
+  SELECTION-SCREEN: BEGIN OF BLOCK blk0 WITH FRAME TITLE TEXT-000.
   SELECT-OPTIONS: s_id FOR zrest_config-interface_id.
   SELECTION-SCREEN: END   OF BLOCK blk0.
 
 
-  SELECTION-SCREEN: BEGIN OF BLOCK blk1 WITH FRAME TITLE text-001.
+  SELECTION-SCREEN: BEGIN OF BLOCK blk1 WITH FRAME TITLE TEXT-001.
   SELECT-OPTIONS: s_startd FOR w_startd DEFAULT sy-datum TO sy-datum," v-javeda - MS2K948543 - default today
                   s_stime FOR w_start,
                   s_compdt FOR w_compdate,
-                  s_comptm FOR w_comptime.
+                  s_comptm FOR w_comptime,
+                  s_subdt  FOR w_subdt,  "+SMTK905411/#VSO 4668157
+                  s_subt   FOR w_subt.   "+SMTK905411/#VSO 4668157
   SELECTION-SCREEN: END   OF BLOCK blk1.
 
-  SELECTION-SCREEN: BEGIN OF BLOCK blk2 WITH FRAME TITLE text-002.
+  SELECTION-SCREEN: BEGIN OF BLOCK blk2 WITH FRAME TITLE TEXT-002.
   SELECT-OPTIONS: s_httpst FOR w_httpst.
   SELECT-OPTIONS: s_msgid FOR w_carrid.
   SELECT-OPTIONS: s_busid FOR w_id.
@@ -129,15 +146,29 @@
     IF sy-subrc = 0.ENDIF.
     CALL FUNCTION 'F4IF_INT_TABLE_VALUE_REQUEST'
       EXPORTING
-        retfield    = 'INTERFACE_ID'
-        dynpprog    = sy-repid
-        dynpnr      = sy-dynnr
-        dynprofield = 'S_ID-LOW'
-        value_org   = 'S'
+        retfield        = 'INTERFACE_ID'
+        dynpprog        = sy-repid
+        dynpnr          = sy-dynnr
+        dynprofield     = 'S_ID-LOW'
+        value_org       = 'S'
       TABLES
-        value_tab   = lt_tab[].
+        value_tab       = lt_tab[]
+      EXCEPTIONS
+        parameter_error = 1
+        no_values_found = 2
+        OTHERS          = 3.
     IF sy-subrc <> 0.
 * Implement suitable error handling here
+      "Begin Of Change v-ashokka on 10/28/2022 ++MS1K9A7DJR
+      CASE sy-subrc.
+        WHEN 1.
+          MESSAGE e000(zvf_zrest) RAISING parameter_error.
+        WHEN 2.
+          MESSAGE e000(zvf_zrest) RAISING no_values_found.
+        WHEN OTHERS.
+          MESSAGE e006(zvf_zrest).
+      ENDCASE.
+      "End of Change v-ashokka on 10/28/2022 ++MS1K9A7DJR
     ENDIF.
 
   AT SELECTION-SCREEN ON VALUE-REQUEST FOR s_id-high.
@@ -146,15 +177,28 @@
     IF sy-subrc = 0.ENDIF.
     CALL FUNCTION 'F4IF_INT_TABLE_VALUE_REQUEST'
       EXPORTING
-        retfield    = 'INTERFACE_ID'
-        dynpprog    = sy-repid
-        dynpnr      = sy-dynnr
-        dynprofield = 'S_ID-HIGH'
-        value_org   = 'S'
+        retfield        = 'INTERFACE_ID'
+        dynpprog        = sy-repid
+        dynpnr          = sy-dynnr
+        dynprofield     = 'S_ID-HIGH'
+        value_org       = 'S'
       TABLES
-        value_tab   = lt_tab[].
+        value_tab       = lt_tab[]
+      EXCEPTIONS
+        parameter_error = 1
+        no_values_found = 2
+        OTHERS          = 3.
     IF sy-subrc <> 0.
-* Implement suitable error handling here
+      "Begin Of Change v-ashokka ++MS1K9A7DJR
+      CASE sy-subrc.
+        WHEN 1.
+          MESSAGE e000(zvf_zrest) RAISING parameter_error.
+        WHEN 2.
+          MESSAGE e000(zvf_zrest) RAISING no_values_found.
+        WHEN OTHERS.
+          MESSAGE e006(zvf_zrest).
+      ENDCASE.
+      "End of Change v-ashokka ++MS1K9A7DJR
     ENDIF.
 
 * Start of Selection
@@ -180,10 +224,19 @@
                     AND httpstatus IN s_httpst   "v-javeda - MS2K948543 -  status in selscreen
                     AND businessid IN s_busid
                     AND interface_id IN s_id
-                  ORDER BY zcompdate DESCENDING zcomptime DESCENDING.
+                    AND submit_date  IN s_subdt  "+SMTK905411/#VSO 4668157
+                    AND submit_time  IN s_subt.   "+SMTK905411/#VSO 4668157
+*                  ORDER BY zcompdate DESCENDING zcomptime DESCENDING. -- Commneted by v-ashokka on 10/28/2022  ++MS1K9A7DJR
       IF sy-dbcnt IS INITIAL.
         MESSAGE s398(00) WITH 'No data selected'.
+*     Begin of Changes SMTK905463
+      ELSE.
+        SORT itab BY zcompdate DESCENDING zcomptime DESCENDING. " ++ Added by  v-ashokka on 10/28/2022  ++MS1K9A7DJR
+        CLEAR gv_lines.
+        DESCRIBE TABLE itab LINES gv_lines.
+*      End of Changes SMTK905463
       ENDIF.
+
     ENDMETHOD.                    "get_data
     "Add buttons to the toolbar
     METHOD handle_toolbar.
@@ -353,6 +406,11 @@
                   txt2   = 'Select only one row.'
                 EXCEPTIONS
                   OTHERS = 1.
+*               Begin of change v-ashokka on 10/28/2022 ++MS1K9A7DJR
+                if sy-subrc <> 0.
+                  MESSAGE e007(zvf_zrest).
+                endif.
+*               End of change v-ashokka on 10/28/2022 ++MS1K9A7DJR
             ELSE.
               FREE MEMORY ID 'ABCD'.
               READ TABLE lt_rows INDEX 1 INTO l_row.
@@ -360,15 +418,45 @@
               DATA: pay_body TYPE zrest_mo_payload-payload.
               SELECT payload FROM  zrest_mo_payload INTO pay_body WHERE messageid = sel_row-zmessageid.
               ENDSELECT.
-              TRY.
-                  CALL METHOD zcl_rest_utility_class=>download_payload_file( xstring = pay_body message_id = sel_row-zmessageid ).
+**--    Begin of changes  by V-GUPTASHIV  MS1K9A7DJR
+              SELECT SINGLE sensitive_flag,
+                            sensitive_group
+                       FROM zrest_config
+                      INTO @DATA(lwa_zrest_config) WHERE interface_id = @sel_row-interface_id.
+              IF lwa_zrest_config-sensitive_flag IS NOT INITIAL.
+                AUTHORITY-CHECK OBJECT 'ZPAY_LOAD'
+                      ID 'ACTVT'  FIELD 'DL'
+                      ID 'ZGROUP' FIELD  lwa_zrest_config-sensitive_group.
+                IF sy-subrc <> 0.
+                  MESSAGE 'No Authorization to download the Paylaod'(001) TYPE 'I' DISPLAY LIKE 'E'.
+                  EXIT.
+                ENDIF.
+**--    End of changes by V-GUPTASHIV MS1K9A7DJR
+                TRY.
+                    CALL METHOD zcl_rest_utility_class=>download_payload_file( xstring = pay_body message_id = sel_row-zmessageid ).
 *                Authorization check VSTF # 2163894 | DGDK903413
 
-                CATCH zcx_http_client_failed INTO lv_textid.
-                  lv_text2 = lv_textid->if_t100_message~t100key.
-                  MESSAGE ID lv_text2-msgid TYPE 'I' NUMBER lv_text2-msgno.
-                  EXIT.
-              ENDTRY.
+                  CATCH zcx_http_client_failed INTO lv_textid.
+                    lv_text2 = lv_textid->if_t100_message~t100key.
+                    MESSAGE ID lv_text2-msgid TYPE 'I' NUMBER lv_text2-msgno.
+                    EXIT.
+                ENDTRY.
+              ELSE.
+**--    Begin of changes by V-GUPTASHIV MS1K9A7DJR
+*       Directly call the download payload file method.
+                TRY.
+                    CALL METHOD zcl_rest_utility_class=>download_payload_file( xstring = pay_body message_id = sel_row-zmessageid ).
+*                Authorization check VSTF # 2163894 | DGDK903413
+
+                  CATCH zcx_http_client_failed INTO lv_textid.
+                    lv_text2 = lv_textid->if_t100_message~t100key.
+                    MESSAGE ID lv_text2-msgid TYPE 'I' NUMBER lv_text2-msgno.
+                    EXIT.
+                ENDTRY.
+
+**                ENDIF.
+              ENDIF.
+**--    End of changes by V-GUPTASHIV MS1K9A7DJR
 *             end of changes VSTF # 2163894 | DGDK903413
             ENDIF.
           ENDIF.
@@ -441,7 +529,7 @@
 **         v-javeda - MS2K948543
                 IF obj IS BOUND.
                   TRY.
-                      CALL METHOD obj->retry( message_id = sel_row-zmessageid method = 'None' ).
+                      CALL METHOD obj->retry( EXPORTING message_id = sel_row-zmessageid method = 'None' ).
 *                Authorization check VSTF # 2163894 | DGDK903413
                     CATCH zcx_http_client_failed INTO lv_clnt_failed.
                       lv_text2 = lv_clnt_failed->if_t100_message~t100key.
@@ -484,16 +572,51 @@
             CREATE OBJECT ob .
             IF ob IS BOUND.
 *             Changed for Authorization Check VSTF # 2163894 | DGDK903413
-              TRY.
-                  CALL METHOD ob->show_payload( message_id = sel_row-zmessageid ).
-                CATCH zcx_http_client_failed INTO lv_textid.
-                  lv_text2 = lv_textid->if_t100_message~t100key.
-                  MESSAGE ID lv_text2-msgid TYPE 'I' NUMBER lv_text2-msgno.
+**--  Begin of changes  by V-GUPTASHIV  MS1K9A7DJR
+              CLEAR lwa_zrest_config.
+              SELECT SINGLE sensitive_flag
+                            sensitive_group
+                       FROM zrest_config
+                       INTO lwa_zrest_config WHERE interface_id = sel_row-interface_id.
+              IF lwa_zrest_config-sensitive_flag IS NOT INITIAL.
+
+                AUTHORITY-CHECK OBJECT 'ZPAY_LOAD'
+                               ID 'ACTVT'  FIELD '03'
+                               ID 'ZGROUP' FIELD  lwa_zrest_config-sensitive_group.
+                IF sy-subrc <> 0.
+                  MESSAGE 'No Authorization to view the Paylaod'(002) TYPE 'I' DISPLAY LIKE 'E'.
                   EXIT.
-              ENDTRY.
+                ENDIF.
+**--End  of changes  by V-GUPTASHIV  MS1K9A7DJR
+                TRY.
+                    CALL METHOD ob->show_payload( message_id = sel_row-zmessageid ).
+                  CATCH zcx_http_client_failed INTO lv_textid.
+                    lv_text2 = lv_textid->if_t100_message~t100key.
+                    MESSAGE ID lv_text2-msgid TYPE 'I' NUMBER lv_text2-msgno.
+                    EXIT.
+                ENDTRY.
+
+              ELSE.
+**--Begin of changes  by V-GUPTASHIV  MS1K9A7DJR
+*                Directly call the show payload method
+                TRY.
+                    CALL METHOD ob->show_payload( message_id = sel_row-zmessageid ).
+                  CATCH zcx_http_client_failed INTO lv_textid.
+                    lv_text2 = lv_textid->if_t100_message~t100key.
+                    MESSAGE ID lv_text2-msgid TYPE 'I' NUMBER lv_text2-msgno.
+                    EXIT.
+                ENDTRY.
+
+*                ENDIF.
+              ENDIF.
+**--End  of changes  by V-GUPTASHIV  MS1K9A7DJR
+** end of changes VSTF # | MS1K9A7DJR
+
 *             end of changes VSTF # 2163894 | DGDK903413
             ENDIF.
           ENDIF.
+
+
 
         WHEN 'SHOW RESPONSE'.
           CALL METHOD grid1->get_selected_rows
@@ -520,7 +643,7 @@
             CREATE OBJECT ob .
             IF ob IS BOUND.
               TRY.
-                  CALL METHOD ob->show_payload( message_id = sel_row-zmessageid response = abap_true ).
+                  CALL METHOD ob->show_payload( EXPORTING message_id = sel_row-zmessageid response = abap_true ).
 *              Authorization changes V-DEVEER
                 CATCH zcx_http_client_failed INTO lv_textid.
                   lv_text2 = lv_textid->if_t100_message~t100key.
@@ -555,7 +678,7 @@
             CREATE OBJECT ob .
             IF ob IS BOUND.
               TRY.
-                  CALL METHOD ob->retry_log( message_id = sel_row-zmessageid response = abap_true ).
+                  CALL METHOD ob->retry_log( EXPORTING message_id = sel_row-zmessageid response = abap_true ).
 *              Authorization changes V-DEVEER
                 CATCH zcx_http_client_failed INTO lv_textid.
                   lv_text2 = lv_textid->if_t100_message~t100key.
@@ -604,9 +727,16 @@
 *
 *----------------------------------------------------------------------*
   MODULE pbo_100 OUTPUT.
+*    Begin of Changes SMTK905463
+    DATA: count    TYPE string,
+          lv_lines TYPE string.
+    lv_lines = gv_lines.
+    CONCATENATE 'No.of Records:' lv_lines INTO count SEPARATED BY space.
+*    End of Changes SMTK905463
     SET PF-STATUS 'MAIN100'.
     SET TITLEBAR 'MAIN100'.
     g_repid = sy-repid.
+
     IF custom_container1 IS INITIAL OR grid1 IS INITIAL.
 * Creating Docking Container and grid
       PERFORM create_object.
@@ -619,7 +749,6 @@
 *  Displaying the output
     PERFORM display_output.
 
-
     CREATE OBJECT event_receiver.
     SET HANDLER event_receiver->handle_user_command FOR grid1.
     SET HANDLER event_receiver->handle_toolbar FOR grid1.
@@ -628,7 +757,6 @@
     CALL METHOD cl_gui_control=>set_focus
       EXPORTING
         control = grid1.
-
 
   ENDMODULE.                 " PBO_100  OUTPUT
 
@@ -693,10 +821,16 @@
       ENDIF.
     ENDIF.
     IF grid1 IS INITIAL.
+*    Begin of Changes SMTK905463
 * create an instance of alv control
+*      CREATE OBJECT grid1
+*        EXPORTING
+*          i_parent = cl_gui_custom_container=>screen0.
+
       CREATE OBJECT grid1
         EXPORTING
-          i_parent = cl_gui_custom_container=>screen0.
+          i_parent = custom_container1.
+*    End of Changes SMTK905463
     ENDIF.
   ENDFORM.                    "create_object
 
@@ -716,6 +850,18 @@
         inconsistent_interface = 1
         program_error          = 2
         OTHERS                 = 3.
+    "Begin Of Change v-ashokka on 10/28/2022 ++ MS1K9A7DJR
+    IF sy-subrc <> 0.
+      CASE sy-subrc.
+        WHEN 1.
+          MESSAGE e000(zvf_zrest) RAISING inconsistent_interface.
+        WHEN 2.
+          MESSAGE e000(zvf_zrest) RAISING program_error.
+        WHEN OTHERS.
+          MESSAGE e008(zvf_zrest).
+      ENDCASE.
+    ENDIF.
+    "End of Change v-ashokka on 10/28/2022 ++ MS1K9A7DJR
   ENDFORM. " create_fieldcat
 
 *&---------------------------------------------------------------------*
@@ -746,7 +892,6 @@
       WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
     ENDIF.
 
-
   ENDFORM. " display_output
 
 *&---------------------------------------------------------------------*
@@ -762,6 +907,7 @@
     ls_fcat-reptext    = 'Corelation Id'.
     ls_fcat-fieldname  = 'ZMESSAGEID'.
     ls_fcat-ref_table  = 'WT_CUST'.
+    ls_fcat-outputlen  = '32'. "Added: TR# SMTK905370/VSO# 4668161
     APPEND ls_fcat TO fieldcat.
     CLEAR: ls_fcat.
 
