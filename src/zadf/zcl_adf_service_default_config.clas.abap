@@ -20,7 +20,7 @@ ENDCLASS.
 
 
 
-CLASS ZCL_ADF_SERVICE_DEFAULT_CONFIG IMPLEMENTATION.
+CLASS zcl_adf_service_default_config IMPLEMENTATION.
 
 
   METHOD constructor.
@@ -53,10 +53,6 @@ CLASS ZCL_ADF_SERVICE_DEFAULT_CONFIG IMPLEMENTATION.
     APPEND INITIAL LINE TO m_impl_cache ASSIGNING <fs>.
     <fs>-service_id = zif_adf_azure_defconfig~gc_service_cosmosdb.
     <fs>-classname = 'ZCL_ADF_SERVICE_COSMOSDB'.
-
-    APPEND INITIAL LINE TO m_impl_cache ASSIGNING <fs>.
-    <fs>-service_id = zif_adf_azure_defconfig~gc_service_log.
-    <fs>-classname = 'ZCL_ADF_SERVICE_LOG'.
 
   ENDMETHOD.
 

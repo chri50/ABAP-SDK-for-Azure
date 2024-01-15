@@ -15,9 +15,7 @@
     <SCRTEXT_S>Method</SCRTEXT_S>
     <SCRTEXT_M>Method</SCRTEXT_M>
     <SCRTEXT_L>Method</SCRTEXT_L>
-    <ACTFLAG>I</ACTFLAG>
     <DTELMASTER>E</DTELMASTER>
-    <RESERVEDTE>JB</RESERVEDTE>
     <REFKIND>D</REFKIND>
    </DD04V>
   </asx:values>

@@ -1,21 +1,17 @@
-interface ZIF_ADF_AZURE_DEFCONFIG
-  public .
+INTERFACE zif_adf_azure_defconfig
+  PUBLIC .
 
+  CONSTANTS gc_service_eventhub   TYPE zazure_dest VALUE 'EVENTHUB'. "#EC NOTEXT
+  CONSTANTS gc_service_blob       TYPE zazure_dest VALUE 'BLOB'. "#EC NOTEXT
+  CONSTANTS gc_service_docdb      TYPE zazure_dest VALUE 'DOCUMENTDB'. "#EC NOTEXT
+  CONSTANTS gc_service_servicebus TYPE zazure_dest VALUE 'SERVICEBUS'. "#EC NOTEXT
+  CONSTANTS gc_service_aad        TYPE zazure_dest VALUE 'AAD'. "#EC NOTEXT
+  CONSTANTS gc_service_keyvault   TYPE zazure_dest VALUE 'KV'. "#EC NOTEXT
+  CONSTANTS gc_service_cosmosdb   TYPE zazure_dest VALUE 'COSMOSDB'. "#EC NOTEXT
 
-  constants GC_SERVICE_EVENTHUB type ZAZURE_DEST value 'EVENTHUB' ##NO_TEXT.
-  constants GC_SERVICE_BLOB type ZAZURE_DEST value 'BLOB' ##NO_TEXT.
-  constants GC_SERVICE_DOCDB type ZAZURE_DEST value 'DOCUMENTDB' ##NO_TEXT.
-  constants GC_SERVICE_SERVICEBUS type ZAZURE_DEST value 'SERVICEBUS' ##NO_TEXT.
-  constants GC_SERVICE_AAD type ZAZURE_DEST value 'AAD' ##NO_TEXT.
-  constants GC_SERVICE_KEYVAULT type ZAZURE_DEST value 'KV' ##NO_TEXT.
-  constants GC_SERVICE_COSMOSDB type ZAZURE_DEST value 'COSMOSDB' ##NO_TEXT.
-  constants GC_SERVICE_LOG type ZAZURE_DEST value 'LOG' ##NO_TEXT.
+  METHODS get_classname
+    IMPORTING i_interface_type   TYPE zazure_dest
+    RETURNING VALUE(r_classname) TYPE seoclname
+    RAISING   zcx_adf_service.
 
-  methods GET_CLASSNAME
-    importing
-      !I_INTERFACE_TYPE type ZAZURE_DEST
-    returning
-      value(R_CLASSNAME) type SEOCLNAME
-    raising
-      ZCX_ADF_SERVICE .
-endinterface.
+ENDINTERFACE.

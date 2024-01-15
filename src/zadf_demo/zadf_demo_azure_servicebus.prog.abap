@@ -6,6 +6,7 @@
 ** Basic Configuration Steps similar to Azure eventhub implementation  *
 ** guide in Github                                                     *
 **---------------------------------------------------------------------*
+*-----------Steps for access to ServiceBus via SAS keys----------------*
 ** 1.Create your service Bus namespace in  Azure portal link           *
 ** Refer Document:                                                     *
 ** https://docs.microsoft.com/en-us/azure/                             *
@@ -29,9 +30,36 @@
 ** as 'S'                                                              *
 ** 5.5 Maintain your Policy name for interface id in table             *
 ** 'ZADF_EHUB_POLICY'                                                  *
+**-----------Steps for access via Azure Active directory---------------*
+** 1.Follow above steps i.e. 1 to 4 to create ServiceBus namespace     *
+** 2.Register an App in Azure Active Directory under App registerations*
+** 3.Now, assign relevant roles to this AAD app under Access Control   *
+**   (IAM) in ServiceBus namespace.                                    *
+** 4.1 Configure 2 RFC destinations of type 'G' with below target host:*
+** 4.2 Service Bus destination                                         *
+**    Target Host : <Servicebus namespace>.servicebus.windows.net      *
+**    Path Prefix : /<topics name>/messages                            *
+**  4.3 AAD Destination                                                *
+**     Target Host : login.microsoftonline.com                         *
+**     Path Prefix : /<AAD_Tenant_ID>/oauth2/token                     *
+** 5.1 Table entry for ZREST_CONFIG for AAD interface ID e.g 'AAD_SBUS'*
+** 5.2 Table entry for ZREST_CONFIG for Service Bus interface ID       *
+**  e.g 'DEMO_SB'                                                      *
+** 5.3 Maintain 2 Table entries for ZREST_CONF_MISC for above interface*
+**  each with method as 'POST' along with other field values           *
+** 5.4 Maintain 2 Table entries for ZADF_CONFIG with base URI value as *
+**     as blank,Enable processing as blank,Service call type as 'S'    *
+**  i) In case of AAD Interface ID                                     *
+**        Interface Type as 'Azure Active Directory'                   *
+*         SAS key as Registered AAD App Secret                         *
+**  ii) In case of ServiceBus Interface ID                             *
+**       Interface Type as 'Azure Servicebus'                          *
+**       SAS Key as blank                                              *
+** 5.5 Maintain your Policy name for interface id in table             *
+** 'ZADF_EHUB_POLICY'                                                  *
 *&---------------------------------------------------------------------*
 REPORT zadf_demo_azure_servicebus.
-CONSTANTS: gc_interface TYPE zinterface_id VALUE 'DEMO_SB'.
+CONSTANTS: gc_interface TYPE zinterface_id VALUE 'DEMO_SB1'.
 
 TYPES: BEGIN OF lty_data,
          carrid    TYPE    s_carr_id,
@@ -48,6 +76,7 @@ DATA: it_headers      TYPE tihttpnvp,
       cx_http         TYPE REF TO zcx_http_client_failed,
       cx_adf_service  TYPE REF TO zcx_adf_service,
       oref_servicebus TYPE REF TO zcl_adf_service_servicebus,
+      lo_ref_aad      TYPE REF TO zcl_adf_service_aad,
       oref            TYPE REF TO zcl_adf_service,
       filter          TYPE zbusinessid,
       lv_http_status  TYPE i,
@@ -56,31 +85,66 @@ DATA: it_headers      TYPE tihttpnvp,
       lv_xstring      TYPE xstring,
       it_data         TYPE STANDARD TABLE OF lty_data.
 
-SELECTION-SCREEN BEGIN OF BLOCK bl1 WITH FRAME.
-PARAMETER: p_sbifid TYPE zinterface_id DEFAULT gc_interface.
-SELECTION-SCREEN END OF BLOCK bl1.
+* Call below methods in order to fetch AAD token
+TRY.
+    CALL METHOD zcl_adf_service_factory=>create
+      EXPORTING
+        iv_interface_id        = 'AAD_SBUS'         " AAD Interface
+        iv_business_identifier = 'AAD_TOKEN_IDENT'
+      RECEIVING
+        ro_service             = DATA(lo_oref).
+  CATCH zcx_adf_service zcx_interace_config_missing zcx_http_client_failed.
+ENDTRY.
+
+lo_ref_aad ?=  lo_oref.
+
+* Generate the Bearer token
+IF lo_ref_aad IS BOUND.
+  TRY.
+      CALL METHOD lo_ref_aad->get_aad_token
+        EXPORTING
+          iv_client_id = 'Input_AAD_ClientId'                     " Input AAD client ID registered in Azure
+          iv_resource  = 'https://servicebus.azure.net'           " Input Service Bus resource
+        IMPORTING
+          ev_aad_token = DATA(lv_aad_token)
+          ev_response  = DATA(lv_add_response).
+    CATCH zcx_adf_service .
+    CATCH zcx_interace_config_missing.
+    CATCH zcx_http_client_failed .
+  ENDTRY.
+
+  CLEAR it_headers.
+* Add token to headers
+  it_headers = VALUE #( ( name = 'Authorization' value = lv_aad_token ) ).
+ENDIF.
 
 *Sample data population for sending it to Azure Service Bus
-SELECT  carrid connid fldate planetype
-        FROM sflight UP TO 10 ROWS
-        INTO TABLE it_data.
+SELECT carrid connid fldate planetype
+       FROM sflight UP TO 10 ROWS
+       INTO TABLE it_data.
 
 IF sy-subrc EQ 0.
 
   TRY.
 **Calling Factory method to instantiate Service Bus client
 
-      oref = zcl_adf_service_factory=>create( iv_interface_id        = p_sbifid
+      oref = zcl_adf_service_factory=>create( iv_interface_id = gc_interface
                                               iv_business_identifier = filter ).
       oref_servicebus ?= oref.
 
 **Setting Expiry time
-      oref_servicebus->add_expiry_time( iv_expiry_hour = 0
-                                        iv_expiry_min  = 15
-                                        iv_expiry_sec  = 0 ).
+      CALL METHOD oref_servicebus->add_expiry_time
+        EXPORTING
+          iv_expiry_hour = 0
+          iv_expiry_min  = 15
+          iv_expiry_sec  = 0.
 
-      CREATE OBJECT lo_json EXPORTING data = it_data.
+      CREATE OBJECT lo_json
+        EXPORTING
+          data = it_data.
+
       lo_json->serialize( ).
+
       lv1_string  = lo_json->get_data( ).
 
 *Convert input string data to Xstring format
@@ -94,17 +158,20 @@ IF sy-subrc EQ 0.
           OTHERS = 2.
       IF sy-subrc <> 0.
       ENDIF.
-      CLEAR it_headers.
+
       wa_headers-name = 'BrokerProperties'.
       wa_headers-value = '{"Label":"SFLIGHTData"}'.
       APPEND wa_headers TO it_headers.
       CLEAR  wa_headers.
 
 **Sending Converted SAP data to Azure Servicebus
-      oref_servicebus->send( EXPORTING request        = lv_xstring        "Input XSTRING of SAP Business data
-                                       it_headers     = it_headers        "Header attributes
-                             IMPORTING response       = lv_response       "Response from Service Bus
-                                       ev_http_status = lv_http_status ). "Status
+      CALL METHOD oref_servicebus->send
+        EXPORTING
+          request        = lv_xstring  "Input XSTRING of SAP Business data
+          it_headers     = it_headers  "Header attributes
+        IMPORTING
+          response       = lv_response       "Response from Service Bus
+          ev_http_status = lv_http_status.   "Status
 
     CATCH zcx_interace_config_missing INTO cx_interface.
       lv_string = cx_interface->get_text( ).

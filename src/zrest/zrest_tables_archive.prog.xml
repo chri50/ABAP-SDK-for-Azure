@@ -6,6 +6,7 @@
     <NAME>ZREST_TABLES_ARCHIVE</NAME>
     <SUBC>1</SUBC>
     <APPL>*</APPL>
+    <SECU>ZAPP_SUP</SECU>
     <RSTAT>K</RSTAT>
     <RLOAD>E</RLOAD>
     <FIXPT>X</FIXPT>
@@ -129,6 +130,12 @@
      <ID>S</ID>
      <KEY>S_MESGID</KEY>
      <ENTRY>Message Id</ENTRY>
+     <LENGTH>18</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>S_STATUS</KEY>
+     <ENTRY>HTTP Satus</ENTRY>
      <LENGTH>18</LENGTH>
     </item>
     <item>
