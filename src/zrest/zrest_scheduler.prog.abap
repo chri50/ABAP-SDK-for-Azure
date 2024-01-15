@@ -11,31 +11,21 @@ REPORT zrest_scheduler.
 * Date      | USER ID  |  VSTF  | Transport  | Remarks                 *
 *-----------|----------|--------|------------|-------------------------*
 * 04|28|2016|V-DEVEER  |2163894 | DGDK903413 | Authorization Check
-* 10|18|2017|V-LAUPPA  |2636456 | DGDK907421 | Performace improvement
-* 03|13|2019|V-SRKURA  |4364787 | DGDK910813 | REST Framework changes
-* 08|24|2022|V-GORAJESH|        | SMTK907903 | Fixing VF Errors        *
 *----------------------------------------------------------------------*
 *----------------------------------------------------------------------------------------------*
 * SELECTION SCREEN
 *-----------------------------------------------------------------------------------------------*
 TABLES zrest_config.
-*--Begin of Changes by V-SRKURA 03/13/2019 4364787/DGDK910813
-SELECTION-SCREEN: BEGIN OF BLOCK blk1 WITH FRAME TITLE text-002.
-PARAMETERS: p_retry  TYPE char1 RADIOBUTTON GROUP rad DEFAULT 'X',
-            p_delete TYPE char1 RADIOBUTTON GROUP rad.
-SELECTION-SCREEN: END   OF BLOCK blk1.
-*--End of Changes by V-SRKURA 03/13/2019 4364787/DGDK910813
 SELECTION-SCREEN: BEGIN OF BLOCK blk0 WITH FRAME TITLE text-001 .
 SELECT-OPTIONS: s_id FOR zrest_config-interface_id.
 SELECTION-SCREEN: END   OF BLOCK blk0.
-DATA: lt_interface_id TYPE ztt_interface_id,                 "Added by V-SRKURA 4364787/DGDK910813
-      ls_interface_id TYPE zts_interface_id.                 "Added by V-SRKURA 4364787/DGDK910813
+
 *----------------------------------------------------------------------------------------------*
 CLASS lcl_process_data DEFINITION.
   PUBLIC SECTION.
     METHODS cleanse_records.
     METHODS get_process.
-ENDCLASS.
+ENDCLASS.                    "lcl_process_data DEFINITION
 *----------------------------------------------------------------------------------------------*
 CLASS lcl_process_data IMPLEMENTATION.
 *----------------------------------------------------------------------------------------------*
@@ -43,11 +33,9 @@ CLASS lcl_process_data IMPLEMENTATION.
 *----------------------------------------------------------------------------------------------*
   METHOD get_process.
     DATA : rest_utility TYPE REF TO zcl_rest_utility_class.
-*--Begin of Changes by V-SRKURA 03/13/2019 4364787/DGDK910813
-*   DATA(it_unprocessed_data) = zcl_rest_utility_class=>unprocessed_data( ).
-    DATA(it_unprocessed_data) = zcl_rest_utility_class=>unprocessed_data(
-                                EXPORTING interface_id = lt_interface_id  ).
-*--End of Changes by V-SRKURA 03/13/2019 4364787/DGDK910813
+    DATA : it_unprocessed_data TYPE zrt_payload.
+    DATA : wa_unprocessed_data TYPE zrest_mo_payload.
+    it_unprocessed_data = zcl_rest_utility_class=>unprocessed_data( ).
     DELETE it_unprocessed_data WHERE interface_id NOT IN s_id.
 
 * Check if table is initial , if yes exit.
@@ -58,13 +46,12 @@ CLASS lcl_process_data IMPLEMENTATION.
       EXIT.
     ELSE.
 *   Loop at unprocessed_data and retry.
-      LOOP AT it_unprocessed_data INTO DATA(wa_unprocessed_data).
+      LOOP AT it_unprocessed_data INTO wa_unprocessed_data.
 *   Create utility object
         CREATE OBJECT rest_utility.
 *   Call the retry method and set async to false , retry to true.
         TRY .
             CALL METHOD rest_utility->retry(
-              EXPORTING
                 message_id     = wa_unprocessed_data-messageid
                 method         = wa_unprocessed_data-method
                 from_scheduler = 'X' ).
@@ -79,39 +66,27 @@ CLASS lcl_process_data IMPLEMENTATION.
         ENDTRY.
 *   Clear the object reference
         FREE rest_utility.
-*        WRITE:/10 '*******************************************************************************'.
-*        WRITE:/10 'Processed Message ID' , 30 wa_unprocessed_data-messageid  , 65 'Failed'.
-*        WRITE:/10 '*******************************************************************************'.
+        WRITE:/10 '*******************************************************************************'.
+        WRITE:/10 'Processed Message ID' , 30 wa_unprocessed_data-messageid  , 65 'Failed'.
+        WRITE:/10 '*******************************************************************************'.
       ENDLOOP.
     ENDIF.
-  ENDMETHOD.
+  ENDMETHOD.                    "get_process
 *----------------------------------------------------------------------------------------------*
 * Apply the retention period  - 30 days for succesful and errors stay forever !                *
 *----------------------------------------------------------------------------------------------*
   METHOD cleanse_records.
     TRY.
-*--Begin of Changes by V-SRKURA 03/13/2019 4364787/DGDK910813
-*       zcl_rest_utility_class=>reset_all_data( ).
-        zcl_rest_utility_class=>reset_all_data(
-                                EXPORTING interface_id = lt_interface_id ).
-*--End of Changes by V-SRKURA 03/13/2019 4364787/DGDK910813
+        zcl_rest_utility_class=>reset_all_data( ).
 *    Changes for Authorization VSTF # 2163894 | DGDK903413
-
-*Begin of Changes by V-gorajesh 08/24/2022 SMTK907903
-*      CATCH zcx_http_client_failed. "commented by V-gorajesh 08/16/2019
-      CATCH zcx_http_client_failed into data(lv_ref).
-      data(lv_msgtxt) = lv_ref->GET_TEXT( ).
-      IF NOT lv_msgtxt IS INITIAL.
-      WRITE:/10 lv_msgtxt.
-      ENDIF.
-*End of Changes by V-gorajesh 08/24/2022 SMTK907903
+      CATCH zcx_http_client_failed.
     ENDTRY.
 *    End of changes VSTF # 2163894 | DGDK903413
     WRITE:/10 '*******************************************************************************'.
     WRITE:/10 '*************Messages older than 30 days cleansed******************************'.
     WRITE:/10 '*******************************************************************************'.
-  ENDMETHOD.
-ENDCLASS.
+  ENDMETHOD.                    "cleanse_records
+ENDCLASS.                    "lcl_process_data IMPLEMENTATION
 
 *----------------------------------------------------------------------------------------------*
 INITIALIZATION.
@@ -121,17 +96,7 @@ INITIALIZATION.
 *----------------------------------------------------------------------------------------------*
 START-OF-SELECTION.
 *----------------------------------------------------------------------------------------------*
-*--Begin of Changes by V-SRKURA 03/13/2019 4364787/DGDK910813
-  LOOP AT s_id.
-    ls_interface_id = s_id-low.
-    APPEND ls_interface_id TO lt_interface_id.
-    CLEAR ls_interface_id.
-  ENDLOOP.
-*--End of Changes by V-SRKURA 03/13/2019 4364787/DGDK910813
-  IF p_delete = abap_true.                     "Added by V-SRKURA 4364787/DGDK910813
 * Cleanse the records older than 30 days
-    lc_process_object->cleanse_records( ).
-  ELSEIF p_retry = abap_true.                  "Added by V-SRKURA 4364787/DGDK910813
+  lc_process_object->cleanse_records( ).
 * Reprocess the error and records which are waiting to be executed.
-    lc_process_object->get_process( ).
-  ENDIF.                                       "Added by V-SRKURA 4364787/DGDK910813
+  lc_process_object->get_process( ).

@@ -63,55 +63,46 @@
        <PARAMETER>VIEW_ACTION</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Aktion mit Tabelle: anz./änd./transp. (S/U/T)</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>VIEW_NAME</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Name der Tabelle</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CORR_NUMBER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Korrekturnummer für durchgeführte Änderungen</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DBA_SELLIST</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Selektionsbedingungen für den DB-Zugriff</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DPL_SELLIST</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Selektionsbedingungen für die Anzeige</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EXCL_CUA_FUNCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Tabelle mit dynam. zu deaktivierenden CUA-Funkt.</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>X_HEADER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Kontrollblocktabelle für die Tabelle</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>X_NAMTAB</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Kontrollblocktabelle für die Tabellen-Felder</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MISSING_CORR_NUMBER</PARAMETER>
        <KIND>X</KIND>
        <STEXT>Korrekturnummer fehlt</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -194,103 +185,86 @@
        <PARAMETER>FCODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>gewünschte Funktion des Bausteins</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>VIEW_ACTION</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Aktion mit Tabelle: anz./änd./transp. (S/U/T)</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>VIEW_NAME</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Name der Tabelle</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CORR_NUMBER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Korrekturnummer für durchgeführte Änderungen</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LAST_ACT_ENTRY</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Index der Cursorposition in der Anzeigetabelle</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>UCOMM</PARAMETER>
        <KIND>P</KIND>
        <STEXT>letztes User-command innerhalb der Viewpflege</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>UPDATE_REQUIRED</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Flag: Einträge verändert, Sichern erforderlich</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CORR_KEYTAB</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Tabelle mit den Keys der zu transport. Einträge</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DBA_SELLIST</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Selektionsbedingungen für den DB-Zugriff</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DPL_SELLIST</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Selektionsbedingungen für die Anzeige</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EXCL_CUA_FUNCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Tab. der nicht zu aktivierenden CUA-Funktionen</STEXT>
-       <INDEX> 011</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EXTRACT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Tab. der gerade sichtbaren Daten (Anzeigetabelle</STEXT>
-       <INDEX> 012</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>TOTAL</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Tabelle, mit allen von der DB gelesenen Daten</STEXT>
-       <INDEX> 013</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>X_HEADER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Kontrollblocktabelle für die Tabelle</STEXT>
-       <INDEX> 014</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>X_NAMTAB</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Kontrollblocktabelle für die Tabellen-Felder</STEXT>
-       <INDEX> 015</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MISSING_CORR_NUMBER</PARAMETER>
        <KIND>X</KIND>
        <STEXT>Korrekturnummer fehlt</STEXT>
-       <INDEX> 016</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SAVING_CORRECTION_FAILED</PARAMETER>
        <KIND>X</KIND>
        <STEXT>Fehler beim Sichern der Korrektureinträge</STEXT>
-       <INDEX> 017</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -314,13 +288,11 @@
        <PARAMETER>FRAMEWORK_CLASS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Class for interface</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>UPDATE_TASK</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Single-Character Indicator</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -346,19 +318,16 @@
        <PARAMETER>PAYLOAD</PARAMETER>
        <KIND>P</KIND>
        <STEXT>REST Call Payloads</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MONITOR</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Monitor</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETRY</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Retry log</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -385,870 +354,21 @@
        <PARAMETER>PAYLOAD</PARAMETER>
        <KIND>P</KIND>
        <STEXT>REST Call Payloads</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MONITOR</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Monitor</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETRY</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Retry log</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
    </FUNCTIONS>
    <DYNPROS>
-    <item>
-     <HEADER>
-      <PROGRAM>SAPLZREST</PROGRAM>
-      <SCREEN>0001</SCREEN>
-      <LANGUAGE>E</LANGUAGE>
-      <DESCRIPT>View maint: Overview screen ZREST_MONITOR</DESCRIPT>
-      <TYPE>N</TYPE>
-      <NEXTSCREEN>0001</NEXTSCREEN>
-      <LINES>061</LINES>
-      <COLUMNS>083</COLUMNS>
-     </HEADER>
-     <CONTAINERS>
-      <RPY_DYCATT>
-       <TYPE>SCREEN</TYPE>
-       <NAME>SCREEN</NAME>
-      </RPY_DYCATT>
-      <RPY_DYCATT>
-       <TYPE>TABLE_CTRL</TYPE>
-       <NAME>TCTRL_ZREST_MONITOR</NAME>
-       <ELEMENT_OF>SCREEN</ELEMENT_OF>
-       <LINE>001</LINE>
-       <COLUMN>001</COLUMN>
-       <LENGTH>083</LENGTH>
-       <HEIGHT>059</HEIGHT>
-       <C_RESIZE_V>X</C_RESIZE_V>
-       <C_RESIZE_H>X</C_RESIZE_H>
-       <C_SCROLL_V>X</C_SCROLL_V>
-       <C_SCROLL_H>X</C_SCROLL_H>
-       <TC_TABTYPE>ENTRY</TC_TABTYPE>
-       <TC_SEPAR_V>X</TC_SEPAR_V>
-       <TC_SEPAR_H>X</TC_SEPAR_H>
-       <TC_TITLE>X</TC_TITLE>
-       <TC_HEADER>X</TC_HEADER>
-       <TC_CONFIG>X</TC_CONFIG>
-       <TC_SEL_LNS>MULTIPLE</TC_SEL_LNS>
-       <TC_SEL_CLS>NONE</TC_SEL_CLS>
-       <TC_LSEL_CL>X</TC_LSEL_CL>
-       <TC_FIXCOL>001</TC_FIXCOL>
-      </RPY_DYCATT>
-     </CONTAINERS>
-     <FIELDS>
-      <RPY_DYFATC>
-       <CONT_TYPE>SCREEN</CONT_TYPE>
-       <CONT_NAME>SCREEN</CONT_NAME>
-       <TYPE>PUSH_TMPL</TYPE>
-       <NAME>VIM_POSI_PUSH</NAME>
-       <TEXT>____________________</TEXT>
-       <LINE>061</LINE>
-       <COLUMN>019</COLUMN>
-       <LENGTH>020</LENGTH>
-       <VISLENGTH>020</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <PUSH_FCODE>POSI</PUSH_FCODE>
-       <FORMAT>CHAR</FORMAT>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>N</REQU_ENTRY>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>SCREEN</CONT_TYPE>
-       <CONT_NAME>SCREEN</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>VIM_POSITION_INFO</NAME>
-       <TEXT>______________________________</TEXT>
-       <LINE>061</LINE>
-       <COLUMN>040</COLUMN>
-       <LENGTH>030</LENGTH>
-       <VISLENGTH>030</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <UP_LOWER>X</UP_LOWER>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-       <OUTPUTONLY>X</OUTPUTONLY>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <_--32_DIMENS>X</_--32_DIMENS>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>SCREEN</CONT_TYPE>
-       <CONT_NAME>SCREEN</CONT_NAME>
-       <TYPE>OKCODE</TYPE>
-       <NAME>OK_CODE</NAME>
-       <TEXT>____________________</TEXT>
-       <LENGTH>020</LENGTH>
-       <VISLENGTH>020</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <INPUT_FLD>X</INPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>VIM_FRAME_FIELD</NAME>
-       <TEXT>____________________________________________________________</TEXT>
-       <LINE>001</LINE>
-       <LENGTH>060</LENGTH>
-       <VISLENGTH>060</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <UP_LOWER>X</UP_LOWER>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_TITLE>X</TC_TITLE>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-ZMESSAGEID</NAME>
-       <TEXT>Msg_Id__________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>001</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>032</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>V</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-ZUSER</NAME>
-       <TEXT>User_name_______________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>002</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>V</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-RERTYNUM</NAME>
-       <TEXT>Counter_________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>003</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>007</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>4</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-ZMESSAGENUM</NAME>
-       <TEXT>Msg_Num_________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>004</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>020</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>V</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-STATUS</NAME>
-       <TEXT>+_______________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>005</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>255</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-REASON</NAME>
-       <TEXT>+_______________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>006</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>255</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-METHOD</NAME>
-       <TEXT>Char20__________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>007</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>020</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>V</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-DESTINATION</NAME>
-       <TEXT>Char80__________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>008</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>080</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>V</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-HOST</NAME>
-       <TEXT>+_______________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>009</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>255</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-URI</NAME>
-       <TEXT>URI_____________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>010</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>255</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>1</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-INTERFACE_ID</NAME>
-       <TEXT>Inter_ID________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>011</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>010</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>1</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-CALLING_PROGRAM</NAME>
-       <TEXT>Class_Name______________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>012</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>080</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>V</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-CALLING_METHOD</NAME>
-       <TEXT>Method__________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>013</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>080</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>V</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-BUSINESSID</NAME>
-       <TEXT>Business_Identifier_____________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>014</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>020</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>V</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-MAIL_SENT</NAME>
-       <TEXT>+_______________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>015</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>001</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-ZDELETE</NAME>
-       <TEXT>+_______________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>016</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>001</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_MONITOR-DELETEUSER</NAME>
-       <TEXT>+_______________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>017</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>CHECK</TYPE>
-       <NAME>VIM_MARKED</NAME>
-       <LINE>001</LINE>
-       <LENGTH>001</LENGTH>
-       <VISLENGTH>001</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-       <TC_SELCOL>X</TC_SELCOL>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-ZMESSAGEID</NAME>
-       <TEXT>________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>001</COLUMN>
-       <LENGTH>032</LENGTH>
-       <VISLENGTH>032</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <GROUP1>KEY</GROUP1>
-       <FORMAT>RAW</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-       <REQU_ENTRY>N</REQU_ENTRY>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-ZUSER</NAME>
-       <TEXT>____________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>002</COLUMN>
-       <LENGTH>012</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-RERTYNUM</NAME>
-       <TEXT>___</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>003</COLUMN>
-       <LENGTH>003</LENGTH>
-       <VISLENGTH>007</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>NUMC</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-ZMESSAGENUM</NAME>
-       <TEXT>____________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>004</COLUMN>
-       <LENGTH>020</LENGTH>
-       <VISLENGTH>020</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>NUMC</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-STATUS</NAME>
-       <TEXT>____________________________________________________________________________________________________________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>005</COLUMN>
-       <LENGTH>255</LENGTH>
-       <VISLENGTH>255</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-REASON</NAME>
-       <TEXT>____________________________________________________________________________________________________________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>006</COLUMN>
-       <LENGTH>255</LENGTH>
-       <VISLENGTH>255</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-METHOD</NAME>
-       <TEXT>____________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>007</COLUMN>
-       <LENGTH>020</LENGTH>
-       <VISLENGTH>020</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-DESTINATION</NAME>
-       <TEXT>________________________________________________________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>008</COLUMN>
-       <LENGTH>080</LENGTH>
-       <VISLENGTH>080</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-HOST</NAME>
-       <TEXT>____________________________________________________________________________________________________________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>009</COLUMN>
-       <LENGTH>255</LENGTH>
-       <VISLENGTH>255</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-URI</NAME>
-       <TEXT>________________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>010</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>255</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-INTERFACE_ID</NAME>
-       <TEXT>__________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>011</COLUMN>
-       <LENGTH>010</LENGTH>
-       <VISLENGTH>010</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-CALLING_PROGRAM</NAME>
-       <TEXT>________________________________________________________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>012</COLUMN>
-       <LENGTH>080</LENGTH>
-       <VISLENGTH>080</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-CALLING_METHOD</NAME>
-       <TEXT>________________________________________________________________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>013</COLUMN>
-       <LENGTH>080</LENGTH>
-       <VISLENGTH>080</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-BUSINESSID</NAME>
-       <TEXT>____________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>014</COLUMN>
-       <LENGTH>020</LENGTH>
-       <VISLENGTH>020</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-MAIL_SENT</NAME>
-       <TEXT>_</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>015</COLUMN>
-       <LENGTH>001</LENGTH>
-       <VISLENGTH>001</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-ZDELETE</NAME>
-       <TEXT>_</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>016</COLUMN>
-       <LENGTH>001</LENGTH>
-       <VISLENGTH>001</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_MONITOR</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_MONITOR-DELETEUSER</NAME>
-       <TEXT>____________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>017</COLUMN>
-       <LENGTH>012</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-     </FIELDS>
-     <FLOW_LOGIC>
-      <RPY_DYFLOW>
-       <LINE>PROCESS BEFORE OUTPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INITIALISIEREN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT WITH CONTROL</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>TCTRL_ZREST_MONITOR CURSOR NEXTLINE.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>MODULE LISTE_SHOW_LISTE.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>*</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>PROCESS AFTER INPUT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>MODULE LISTE_BEFORE_LOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INIT_WORKAREA.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-ZMESSAGEID .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-ZUSER .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-RERTYNUM .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-ZMESSAGENUM .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-STATUS .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-REASON .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-METHOD .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-DESTINATION .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-HOST .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-URI .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-INTERFACE_ID .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-CALLING_PROGRAM .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-CALLING_METHOD .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-BUSINESSID .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-MAIL_SENT .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-ZDELETE .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-DELETEUSER .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>FIELD ZREST_MONITOR-ZMESSAGEID .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>MODULE LISTE_UPDATE_LISTE.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>MODULE LISTE_AFTER_LOOP.</LINE>
-      </RPY_DYFLOW>
-     </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>2</item>
-      <item>3</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>1</item>
-      <item>1</item>
-     </SPACES>
-    </item>
     <item>
      <HEADER>
       <PROGRAM>SAPLZREST</PROGRAM>
@@ -1433,6 +553,8 @@
        <FROM_DICT>X</FROM_DICT>
        <MODIFIC>X</MODIFIC>
        <PARAM_ID>RFC</PARAM_ID>
+       <SET_PARAM>X</SET_PARAM>
+       <GET_PARAM>X</GET_PARAM>
        <UP_LOWER>X</UP_LOWER>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -1443,19 +565,19 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INITIALISIEREN.</LINE>
+       <LINE> MODULE LISTE_INITIALISIEREN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT WITH CONTROL</LINE>
+       <LINE> LOOP AT EXTRACT WITH CONTROL</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>TCTRL_ZREST_CONFIG CURSOR NEXTLINE.</LINE>
+       <LINE>  TCTRL_ZREST_CONFIG CURSOR NEXTLINE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_SHOW_LISTE.</LINE>
+       <LINE>   MODULE LISTE_SHOW_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -1464,80 +586,54 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
+       <LINE> MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_BEFORE_LOOP.</LINE>
+       <LINE> MODULE LISTE_BEFORE_LOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT.</LINE>
+       <LINE> LOOP AT EXTRACT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INIT_WORKAREA.</LINE>
+       <LINE>   MODULE LISTE_INIT_WORKAREA.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
+       <LINE>    FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-DESTINATION .</LINE>
+       <LINE>    FIELD ZREST_CONFIG-DESTINATION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
+       <LINE>    MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
+       <LINE>   FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
+       <LINE>    FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_UPDATE_LISTE.</LINE>
+       <LINE>    MODULE LISTE_UPDATE_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_AFTER_LOOP.</LINE>
+       <LINE> MODULE LISTE_AFTER_LOOP.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>2</item>
-      <item>3</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>1</item>
-      <item>1</item>
-     </SPACES>
     </item>
     <item>
      <HEADER>
@@ -1871,19 +967,19 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INITIALISIEREN.</LINE>
+       <LINE> MODULE LISTE_INITIALISIEREN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT WITH CONTROL</LINE>
+       <LINE> LOOP AT EXTRACT WITH CONTROL</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>TCTRL_ZREST_CONF_MISC CURSOR NEXTLINE.</LINE>
+       <LINE>  TCTRL_ZREST_CONF_MISC CURSOR NEXTLINE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_SHOW_LISTE.</LINE>
+       <LINE>   MODULE LISTE_SHOW_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -1892,96 +988,66 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
+       <LINE> MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_BEFORE_LOOP.</LINE>
+       <LINE> MODULE LISTE_BEFORE_LOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT.</LINE>
+       <LINE> LOOP AT EXTRACT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INIT_WORKAREA.</LINE>
+       <LINE>   MODULE LISTE_INIT_WORKAREA.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_MISC-INTERFACE_ID .</LINE>
+       <LINE>    FIELD ZREST_CONF_MISC-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_MISC-METHOD .</LINE>
+       <LINE>    FIELD ZREST_CONF_MISC-METHOD .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_MISC-MAX_RETRY .</LINE>
+       <LINE>    FIELD ZREST_CONF_MISC-MAX_RETRY .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_MISC-EMAIL_ID .</LINE>
+       <LINE>    FIELD ZREST_CONF_MISC-EMAIL_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_MISC-MAIL_BODY_TXT .</LINE>
+       <LINE>    FIELD ZREST_CONF_MISC-MAIL_BODY_TXT .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_MISC-RETRY_METHOD .</LINE>
+       <LINE>    FIELD ZREST_CONF_MISC-RETRY_METHOD .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
+       <LINE>    MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
+       <LINE>   FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_MISC-INTERFACE_ID .</LINE>
+       <LINE>    FIELD ZREST_CONF_MISC-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_UPDATE_LISTE.</LINE>
+       <LINE>    MODULE LISTE_UPDATE_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_AFTER_LOOP.</LINE>
+       <LINE> MODULE LISTE_AFTER_LOOP.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>2</item>
-      <item>3</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>1</item>
-      <item>1</item>
-     </SPACES>
     </item>
     <item>
      <HEADER>
@@ -2176,19 +1242,19 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INITIALISIEREN.</LINE>
+       <LINE> MODULE LISTE_INITIALISIEREN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT WITH CONTROL</LINE>
+       <LINE> LOOP AT EXTRACT WITH CONTROL</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>TCTRL_ZREST_GLOBAL CURSOR NEXTLINE.</LINE>
+       <LINE>  TCTRL_ZREST_GLOBAL CURSOR NEXTLINE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_SHOW_LISTE.</LINE>
+       <LINE>   MODULE LISTE_SHOW_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -2197,84 +1263,57 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
+       <LINE> MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_BEFORE_LOOP.</LINE>
+       <LINE> MODULE LISTE_BEFORE_LOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT.</LINE>
+       <LINE> LOOP AT EXTRACT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INIT_WORKAREA.</LINE>
+       <LINE>   MODULE LISTE_INIT_WORKAREA.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
+       <LINE>    MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
+       <LINE>   FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_UPDATE_LISTE.</LINE>
+       <LINE>    MODULE LISTE_UPDATE_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_AFTER_LOOP.</LINE>
+       <LINE> MODULE LISTE_AFTER_LOOP.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>2</item>
-      <item>3</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>1</item>
-      <item>1</item>
-     </SPACES>
     </item>
     <item>
      <HEADER>
@@ -2506,19 +1545,19 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INITIALISIEREN.</LINE>
+       <LINE> MODULE LISTE_INITIALISIEREN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT WITH CONTROL</LINE>
+       <LINE> LOOP AT EXTRACT WITH CONTROL</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>TCTRL_ZREST_CONF_HEAD CURSOR NEXTLINE.</LINE>
+       <LINE>  TCTRL_ZREST_CONF_HEAD CURSOR NEXTLINE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_SHOW_LISTE.</LINE>
+       <LINE>   MODULE LISTE_SHOW_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -2527,88 +1566,60 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
+       <LINE> MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_BEFORE_LOOP.</LINE>
+       <LINE> MODULE LISTE_BEFORE_LOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT.</LINE>
+       <LINE> LOOP AT EXTRACT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INIT_WORKAREA.</LINE>
+       <LINE>   MODULE LISTE_INIT_WORKAREA.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_HEAD-INTERFACE_ID .</LINE>
+       <LINE>    FIELD ZREST_CONF_HEAD-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_HEAD-NAME .</LINE>
+       <LINE>    FIELD ZREST_CONF_HEAD-NAME .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_HEAD-VALUE .</LINE>
+       <LINE>    FIELD ZREST_CONF_HEAD-VALUE .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
+       <LINE>    MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
+       <LINE>   FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_HEAD-INTERFACE_ID .</LINE>
+       <LINE>    FIELD ZREST_CONF_HEAD-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONF_HEAD-NAME .</LINE>
+       <LINE>    FIELD ZREST_CONF_HEAD-NAME .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_UPDATE_LISTE.</LINE>
+       <LINE>    MODULE LISTE_UPDATE_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_AFTER_LOOP.</LINE>
+       <LINE> MODULE LISTE_AFTER_LOOP.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>2</item>
-      <item>3</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>1</item>
-      <item>1</item>
-     </SPACES>
     </item>
     <item>
      <HEADER>
@@ -2632,7 +1643,7 @@
        <ELEMENT_OF>SCREEN</ELEMENT_OF>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
-       <LENGTH>074</LENGTH>
+       <LENGTH>050</LENGTH>
        <HEIGHT>059</HEIGHT>
        <C_RESIZE_V>X</C_RESIZE_V>
        <C_RESIZE_H>X</C_RESIZE_H>
@@ -2750,40 +1761,6 @@
       <RPY_DYFATC>
        <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
        <CONT_NAME>TCTRL_ZREST_CONFIG</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_CONFIG-SENSITIVE_FLAG</NAME>
-       <TEXT>Sens.Flag_______________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>003</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>010</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>1</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_CONFIG</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>*ZREST_CONFIG-SENSITIVE_GROUP</NAME>
-       <TEXT>Sensitive_Group_________________________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>004</COLUMN>
-       <LENGTH>040</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>V</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <TC_HEADING>X</TC_HEADING>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_CONFIG</CONT_NAME>
        <TYPE>CHECK</TYPE>
        <NAME>VIM_MARKED</NAME>
        <LINE>001</LINE>
@@ -2828,45 +1805,11 @@
        <FROM_DICT>X</FROM_DICT>
        <MODIFIC>X</MODIFIC>
        <PARAM_ID>RFC</PARAM_ID>
+       <SET_PARAM>X</SET_PARAM>
+       <GET_PARAM>X</GET_PARAM>
        <UP_LOWER>X</UP_LOWER>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_CONFIG</CONT_NAME>
-       <TYPE>CHECK</TYPE>
-       <NAME>ZREST_CONFIG-SENSITIVE_FLAG</NAME>
-       <LINE>001</LINE>
-       <COLUMN>003</COLUMN>
-       <LENGTH>001</LENGTH>
-       <VISLENGTH>010</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-       <DICT_I_VAL>X</DICT_I_VAL>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>TABLE_CTRL</CONT_TYPE>
-       <CONT_NAME>TCTRL_ZREST_CONFIG</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_CONFIG-SENSITIVE_GROUP</NAME>
-       <TEXT>____________</TEXT>
-       <LINE>001</LINE>
-       <COLUMN>004</COLUMN>
-       <LENGTH>012</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>X</MODIFIC>
-       <FOREIGNKEY>X</FOREIGNKEY>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-       <DICT_I_FKY>X</DICT_I_FKY>
       </RPY_DYFATC>
      </FIELDS>
      <FLOW_LOGIC>
@@ -2874,19 +1817,19 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INITIALISIEREN.</LINE>
+       <LINE> MODULE LISTE_INITIALISIEREN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT WITH CONTROL</LINE>
+       <LINE> LOOP AT EXTRACT WITH CONTROL</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>TCTRL_ZREST_CONFIG CURSOR NEXTLINE.</LINE>
+       <LINE>  TCTRL_ZREST_CONFIG CURSOR NEXTLINE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_SHOW_LISTE.</LINE>
+       <LINE>   MODULE LISTE_SHOW_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -2895,88 +1838,54 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
+       <LINE> MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_BEFORE_LOOP.</LINE>
+       <LINE> MODULE LISTE_BEFORE_LOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT.</LINE>
+       <LINE> LOOP AT EXTRACT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INIT_WORKAREA.</LINE>
+       <LINE>   MODULE LISTE_INIT_WORKAREA.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
+       <LINE>    FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-DESTINATION .</LINE>
+       <LINE>    FIELD ZREST_CONFIG-DESTINATION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-SENSITIVE_FLAG .</LINE>
+       <LINE>    MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-SENSITIVE_GROUP .</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
+       <LINE>   FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
+       <LINE>    FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>    MODULE LISTE_UPDATE_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_UPDATE_LISTE.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>MODULE LISTE_AFTER_LOOP.</LINE>
+       <LINE> MODULE LISTE_AFTER_LOOP.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>2</item>
-      <item>3</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>1</item>
-      <item>1</item>
-     </SPACES>
     </item>
     <item>
      <HEADER>
@@ -3035,12 +1944,12 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>FRAME_TMPL</TYPE>
        <NAME>VIM_FRAME_FIELD</NAME>
-       <TEXT>_______________________________________________________</TEXT>
+       <TEXT>______________________________________________</TEXT>
        <LINE>003</LINE>
        <COLUMN>001</COLUMN>
-       <LENGTH>055</LENGTH>
-       <VISLENGTH>055</VISLENGTH>
-       <HEIGHT>005</HEIGHT>
+       <LENGTH>046</LENGTH>
+       <VISLENGTH>046</VISLENGTH>
+       <HEIGHT>003</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <UP_LOWER>X</UP_LOWER>
        <OUTPUT_FLD>X</OUTPUT_FLD>
@@ -3070,68 +1979,18 @@
        <NAME>ZREST_CONFIG-DESTINATION</NAME>
        <TEXT>________________________________</TEXT>
        <LINE>004</LINE>
-       <COLUMN>023</COLUMN>
+       <COLUMN>014</COLUMN>
        <LENGTH>032</LENGTH>
        <VISLENGTH>032</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <FROM_DICT>X</FROM_DICT>
        <PARAM_ID>RFC</PARAM_ID>
+       <SET_PARAM>X</SET_PARAM>
+       <GET_PARAM>X</GET_PARAM>
        <UP_LOWER>X</UP_LOWER>
        <INPUT_FLD>X</INPUT_FLD>
        <OUTPUT_FLD>X</OUTPUT_FLD>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>SCREEN</CONT_TYPE>
-       <CONT_NAME>SCREEN</CONT_NAME>
-       <TYPE>CHECK</TYPE>
-       <NAME>ZREST_CONFIG-SENSITIVE_FLAG</NAME>
-       <TEXT>Sensitive_Flag______</TEXT>
-       <LINE>005</LINE>
-       <COLUMN>002</COLUMN>
-       <LENGTH>022</LENGTH>
-       <VISLENGTH>022</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>2</MODIFIC>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-       <DICT_I_VAL>X</DICT_I_VAL>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>SCREEN</CONT_TYPE>
-       <CONT_NAME>SCREEN</CONT_NAME>
-       <TYPE>TEXT</TYPE>
-       <NAME>ZREST_CONFIG-SENSITIVE_GROUP</NAME>
-       <TEXT>Sensitive_Group_____</TEXT>
-       <LINE>006</LINE>
-       <COLUMN>002</COLUMN>
-       <LENGTH>020</LENGTH>
-       <VISLENGTH>020</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <MODIFIC>2</MODIFIC>
-       <REQU_ENTRY>N</REQU_ENTRY>
-       <LABELLEFT>X</LABELLEFT>
-      </RPY_DYFATC>
-      <RPY_DYFATC>
-       <CONT_TYPE>SCREEN</CONT_TYPE>
-       <CONT_NAME>SCREEN</CONT_NAME>
-       <TYPE>TEMPLATE</TYPE>
-       <NAME>ZREST_CONFIG-SENSITIVE_GROUP</NAME>
-       <TEXT>____________</TEXT>
-       <LINE>006</LINE>
-       <COLUMN>023</COLUMN>
-       <LENGTH>012</LENGTH>
-       <VISLENGTH>012</VISLENGTH>
-       <HEIGHT>001</HEIGHT>
-       <FORMAT>CHAR</FORMAT>
-       <FROM_DICT>X</FROM_DICT>
-       <INPUT_FLD>X</INPUT_FLD>
-       <OUTPUT_FLD>X</OUTPUT_FLD>
-       <DICT_I_FKY>X</DICT_I_FKY>
       </RPY_DYFATC>
       <RPY_DYFATC>
        <CONT_TYPE>SCREEN</CONT_TYPE>
@@ -3151,7 +2010,7 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE detail_init.</LINE>
+       <LINE> MODULE detail_init.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -3160,64 +2019,39 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE DETAIL_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
+       <LINE> MODULE DETAIL_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE DETAIL_SET_PFSTATUS.</LINE>
+       <LINE> MODULE DETAIL_SET_PFSTATUS.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE> CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
+       <LINE>    FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-DESTINATION .</LINE>
+       <LINE>    FIELD ZREST_CONFIG-DESTINATION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-SENSITIVE_FLAG .</LINE>
+       <LINE>  MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-SENSITIVE_GROUP .</LINE>
+       <LINE> endchain.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
+       <LINE> chain.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>endchain.</LINE>
+       <LINE>    FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>chain.</LINE>
+       <LINE>  module detail_pai.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_CONFIG-INTERFACE_ID .</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>module detail_pai.</LINE>
-      </RPY_DYFLOW>
-      <RPY_DYFLOW>
-       <LINE>endchain.</LINE>
+       <LINE> endchain.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>2</item>
-      <item>1</item>
-      <item>1</item>
-      <item>4</item>
-      <item>2</item>
-      <item>1</item>
-     </SPACES>
     </item>
     <item>
      <HEADER>
@@ -3361,7 +2195,7 @@
        <CONT_NAME>TCTRL_ZOBFUSCATE</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>*ZOBFUSCATE-LENGTH</NAME>
-       <TEXT>Number__________________________________</TEXT>
+       <TEXT>INT4____________________________________</TEXT>
        <LINE>001</LINE>
        <COLUMN>003</COLUMN>
        <LENGTH>040</LENGTH>
@@ -3448,19 +2282,19 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INITIALISIEREN.</LINE>
+       <LINE> MODULE LISTE_INITIALISIEREN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT WITH CONTROL</LINE>
+       <LINE> LOOP AT EXTRACT WITH CONTROL</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>TCTRL_ZOBFUSCATE CURSOR NEXTLINE.</LINE>
+       <LINE>  TCTRL_ZOBFUSCATE CURSOR NEXTLINE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_SHOW_LISTE.</LINE>
+       <LINE>   MODULE LISTE_SHOW_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -3469,88 +2303,60 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
+       <LINE> MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_BEFORE_LOOP.</LINE>
+       <LINE> MODULE LISTE_BEFORE_LOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT.</LINE>
+       <LINE> LOOP AT EXTRACT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INIT_WORKAREA.</LINE>
+       <LINE>   MODULE LISTE_INIT_WORKAREA.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZOBFUSCATE-INETRFACE .</LINE>
+       <LINE>    FIELD ZOBFUSCATE-INETRFACE .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZOBFUSCATE-FIELDTAG .</LINE>
+       <LINE>    FIELD ZOBFUSCATE-FIELDTAG .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZOBFUSCATE-LENGTH .</LINE>
+       <LINE>    FIELD ZOBFUSCATE-LENGTH .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
+       <LINE>    MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
+       <LINE>   FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZOBFUSCATE-INETRFACE .</LINE>
+       <LINE>    FIELD ZOBFUSCATE-INETRFACE .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZOBFUSCATE-FIELDTAG .</LINE>
+       <LINE>    FIELD ZOBFUSCATE-FIELDTAG .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_UPDATE_LISTE.</LINE>
+       <LINE>    MODULE LISTE_UPDATE_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_AFTER_LOOP.</LINE>
+       <LINE> MODULE LISTE_AFTER_LOOP.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>2</item>
-      <item>3</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>1</item>
-      <item>1</item>
-     </SPACES>
     </item>
     <item>
      <HEADER>
@@ -3745,19 +2551,19 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INITIALISIEREN.</LINE>
+       <LINE> MODULE LISTE_INITIALISIEREN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT WITH CONTROL</LINE>
+       <LINE> LOOP AT EXTRACT WITH CONTROL</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>TCTRL_ZREST_GLOBAL CURSOR NEXTLINE.</LINE>
+       <LINE>  TCTRL_ZREST_GLOBAL CURSOR NEXTLINE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_SHOW_LISTE.</LINE>
+       <LINE>   MODULE LISTE_SHOW_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -3766,84 +2572,57 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
+       <LINE> MODULE LISTE_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_BEFORE_LOOP.</LINE>
+       <LINE> MODULE LISTE_BEFORE_LOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>LOOP AT EXTRACT.</LINE>
+       <LINE> LOOP AT EXTRACT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_INIT_WORKAREA.</LINE>
+       <LINE>   MODULE LISTE_INIT_WORKAREA.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
+       <LINE>    MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
+       <LINE>   FIELD VIM_MARKED MODULE LISTE_MARK_CHECKBOX.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE>   CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_UPDATE_LISTE.</LINE>
+       <LINE>    MODULE LISTE_UPDATE_LISTE.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDCHAIN.</LINE>
+       <LINE>   ENDCHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>ENDLOOP.</LINE>
+       <LINE> ENDLOOP.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE LISTE_AFTER_LOOP.</LINE>
+       <LINE> MODULE LISTE_AFTER_LOOP.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>2</item>
-      <item>3</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>3</item>
-      <item>3</item>
-      <item>4</item>
-      <item>4</item>
-      <item>4</item>
-      <item>3</item>
-      <item>1</item>
-      <item>1</item>
-     </SPACES>
     </item>
     <item>
      <HEADER>
@@ -3949,7 +2728,7 @@
        <LINE>PROCESS BEFORE OUTPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE detail_init.</LINE>
+       <LINE> MODULE detail_init.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
        <LINE>*</LINE>
@@ -3958,60 +2737,42 @@
        <LINE>PROCESS AFTER INPUT.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE DETAIL_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
+       <LINE> MODULE DETAIL_EXIT_COMMAND AT EXIT-COMMAND.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE DETAIL_SET_PFSTATUS.</LINE>
+       <LINE> MODULE DETAIL_SET_PFSTATUS.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>CHAIN.</LINE>
+       <LINE> CHAIN.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
+       <LINE>  MODULE SET_UPDATE_FLAG ON CHAIN-REQUEST.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>endchain.</LINE>
+       <LINE> endchain.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>chain.</LINE>
+       <LINE> chain.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-MESSAGE_RETENTION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
+       <LINE>    FIELD ZREST_GLOBAL-LINEAR_RETRY_DURATION .</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>module detail_pai.</LINE>
+       <LINE>  module detail_pai.</LINE>
       </RPY_DYFLOW>
       <RPY_DYFLOW>
-       <LINE>endchain.</LINE>
+       <LINE> endchain.</LINE>
       </RPY_DYFLOW>
      </FLOW_LOGIC>
-     <SPACES>
-      <item>0</item>
-      <item>1</item>
-      <item>0</item>
-      <item>0</item>
-      <item>1</item>
-      <item>1</item>
-      <item>1</item>
-      <item>4</item>
-      <item>4</item>
-      <item>2</item>
-      <item>1</item>
-      <item>1</item>
-      <item>4</item>
-      <item>4</item>
-      <item>2</item>
-      <item>1</item>
-     </SPACES>
     </item>
    </DYNPROS>
   </asx:values>

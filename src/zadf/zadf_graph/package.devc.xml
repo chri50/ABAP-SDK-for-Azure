@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>ZADF_GRAPH</CTEXT>
+    <CTEXT>Package for Graph Services</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>

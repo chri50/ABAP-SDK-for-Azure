@@ -54,65 +54,7 @@
      <ENTRY>Error in getting certificate Instance</ENTRY>
      <LENGTH>74</LENGTH>
     </item>
-    <item>
-     <ID>I</ID>
-     <KEY>008</KEY>
-     <ENTRY>Retry not possible</ENTRY>
-     <LENGTH>28</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>009</KEY>
-     <ENTRY>Maximum number of retry attempts reached</ENTRY>
-     <LENGTH>40</LENGTH>
-    </item>
    </TPOOL>
-   <DESCRIPTIONS>
-    <SEOCOMPOTX>
-     <CMPNAME>GC_I</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Single-Character Flag</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>GC_SEPARATOR</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>String Separator</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>GC_SIG</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Prefix of Signature</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>GC_TYPE</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Type of Token</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>GC_TYPE_AAD</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Type of Token</DESCRIPT>
-    </SEOCOMPOTX>
-    <SEOCOMPOTX>
-     <CMPNAME>GC_VERSION</CMPNAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Token Version</DESCRIPT>
-    </SEOCOMPOTX>
-   </DESCRIPTIONS>
-   <DESCRIPTIONS_SUB>
-    <SEOSUBCOTX>
-     <CMPNAME>RESET_ALL_DATA</CMPNAME>
-     <SCONAME>INTERFACE_ID</SCONAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Interface ID</DESCRIPT>
-    </SEOSUBCOTX>
-    <SEOSUBCOTX>
-     <CMPNAME>UNPROCESSED_DATA</CMPNAME>
-     <SCONAME>INTERFACE_ID</SCONAME>
-     <LANGU>E</LANGU>
-     <DESCRIPT>Interface ID</DESCRIPT>
-    </SEOSUBCOTX>
-   </DESCRIPTIONS_SUB>
   </asx:values>
  </asx:abap>
 </abapGit>

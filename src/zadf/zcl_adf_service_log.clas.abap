@@ -1,4 +1,4 @@
-class ZCL_ADF_SERVICE_OMS_LA definition
+class ZCL_ADF_SERVICE_LOG definition
   public
   inheriting from ZCL_ADF_SERVICE
   final
@@ -12,6 +12,11 @@ public section.
   methods SET_LOG_TYPE
     importing
       !IV_LOG_TYPE type STRING .
+  methods CUSTOM_LOG
+    importing
+      value(IT_DATA) type DATA
+    returning
+      value(SUCCESS) type BOOL .
 
   methods SEND
     redefinition .
@@ -40,14 +45,55 @@ private section.
       value(IV_TIMESTAMP) type STRING
     exporting
       value(EV_SIGN_TEXT) type STRING .
+  methods GET_WORKSPACE_ID
+    returning
+      value(RV_WORKSPACE_ID) type STRING .
 ENDCLASS.
 
 
 
-CLASS ZCL_ADF_SERVICE_OMS_LA IMPLEMENTATION.
+CLASS ZCL_ADF_SERVICE_LOG IMPLEMENTATION.
 
 
-  METHOD generate_signature.
+  method CUSTOM_LOG.
+
+    DATA : lv_json        type string,
+           lv_request     type xstring,
+           lv_http_status type i,
+           lv_response    type string,
+           lcx_adf_service TYPE REF TO zcx_adf_service.
+
+    SUCCESS = ABAP_FALSE.
+
+    lv_json = FORMAT_DATA_TO_JSON( IT_DATA ).
+    lv_request = cl_abap_codepage=>convert_to( source = lv_json codepage = `UTF-8` ).
+
+    ADD_REQUEST_HEADER( EXPORTING IV_NAME  = 'Computer' IV_VALUE = |{ sy-host }| ).
+    ADD_REQUEST_HEADER( EXPORTING IV_NAME  = 'SourceSystem' IV_VALUE = |{ sy-host }| ).
+
+     TRY.
+       SEND(
+      EXPORTING
+        REQUEST        = lv_request
+*        IT_HEADERS     =
+      IMPORTING
+        RESPONSE       = lv_response
+        EV_HTTP_STATUS = lv_http_status
+    ).
+
+    CATCH zcx_adf_service INTO lcx_adf_service.
+
+  ENDTRY.
+
+  IF lv_http_status EQ '200'.
+    SUCCESS = ABAP_TRUE.
+  ENDIF.
+
+
+  endmethod.
+
+
+  METHOD GENERATE_SIGNATURE.
 
     CONSTANTS : lc_key   TYPE string VALUE 'SharedKey'.
 
@@ -58,7 +104,8 @@ CLASS ZCL_ADF_SERVICE_OMS_LA IMPLEMENTATION.
           lv_signature TYPE string,
           lv_header    TYPE string,
           lv_key_enc   TYPE string,
-          lv_key       TYPE xstring.
+          lv_key       TYPE xstring,
+          lv_workspace_id type string.
 
 ** get time in RFC1123 format
     CLEAR gv_timestamp.
@@ -116,14 +163,15 @@ CLASS ZCL_ADF_SERVICE_OMS_LA IMPLEMENTATION.
 ** call macro
     encrypt_signature.
 ** make prefix to signature
-    CONCATENATE lc_key  gv_workspace_id INTO lv_header SEPARATED BY space.
+    lv_workspace_id = GET_WORKSPACE_ID( ).
+    CONCATENATE lc_key lv_workspace_id INTO lv_header SEPARATED BY space.
 
 ** Construct header
     CONCATENATE lv_header ':' lv_signature INTO ev_auth_head.
   ENDMETHOD.
 
 
-  METHOD generate_sign_string.
+  METHOD GENERATE_SIGN_STRING.
 
     CONSTANTS : lc_date TYPE char10 VALUE 'x-ms-date:',
                 lc_app  TYPE char16 VALUE 'application/json',
@@ -148,7 +196,7 @@ CLASS ZCL_ADF_SERVICE_OMS_LA IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD get_rfc1123_time.
+  METHOD GET_RFC1123_TIME.
 
     CONSTANTS : lc_com TYPE c VALUE ',',
                 lc_gmt TYPE char3 VALUE 'GMT',
@@ -209,7 +257,17 @@ CLASS ZCL_ADF_SERVICE_OMS_LA IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD send.
+  method GET_WORKSPACE_ID.
+** loop up workspace id from host uri if not set
+    IF gv_workspace_id is INITIAL and GV_HOST is not INITIAL.
+      gv_workspace_id = substring_before( val = gv_host sub = '.ods.' ).
+    ENDIF.
+
+    rv_workspace_id = gv_workspace_id.
+  endmethod.
+
+
+  METHOD SEND.
     DATA :  lo_response     TYPE REF TO if_rest_entity,
             lo_request      TYPE REF TO if_rest_entity,
             lv_expiry       TYPE string,
@@ -224,7 +282,7 @@ CLASS ZCL_ADF_SERVICE_OMS_LA IMPLEMENTATION.
       lv_json_len = xstrlen( request ).
       TRY.
 **  Check if workspace ID exist
-          IF gv_workspace_id IS INITIAL.
+          IF GET_WORKSPACE_ID( ) IS INITIAL.
             RAISE EXCEPTION TYPE zcx_adf_service
               EXPORTING
                 textid       = zcx_adf_service=>workspace_id_not_found
@@ -268,13 +326,13 @@ CLASS ZCL_ADF_SERVICE_OMS_LA IMPLEMENTATION.
   ENDMETHOD.
 
 
-  METHOD set_log_type.
+  METHOD SET_LOG_TYPE.
 **  Set log type in global variable
     gv_log_type = iv_log_type.
   ENDMETHOD.
 
 
-  METHOD set_workspace_id.
+  METHOD SET_WORKSPACE_ID.
 ** Assign workspace id to global attribute
     gv_workspace_id = iv_workspace_id.
   ENDMETHOD.

@@ -5,7 +5,6 @@
    <PROGDIR>
     <NAME>ZREST_SCREEN</NAME>
     <SUBC>1</SUBC>
-    <SECU>ZAPP_SUP</SECU>
     <RLOAD>E</RLOAD>
     <FIXPT>X</FIXPT>
     <UCCHECK>X</UCCHECK>
@@ -324,20 +323,6 @@
      <KEY>S_STIME</KEY>
      <ENTRY>.</ENTRY>
      <LENGTH>29</LENGTH>
-     <SPLIT>D</SPLIT>
-    </item>
-    <item>
-     <ID>S</ID>
-     <KEY>S_SUBDT</KEY>
-     <ENTRY>.</ENTRY>
-     <LENGTH>22</LENGTH>
-     <SPLIT>D</SPLIT>
-    </item>
-    <item>
-     <ID>S</ID>
-     <KEY>S_SUBT</KEY>
-     <ENTRY>.</ENTRY>
-     <LENGTH>22</LENGTH>
      <SPLIT>D</SPLIT>
     </item>
    </TPOOL>

@@ -4,18 +4,13 @@
   <asx:values>
    <PROGDIR>
     <NAME>ZADF_EVENTGRID_MI_DEMO</NAME>
+    <DBAPL>S</DBAPL>
     <SUBC>1</SUBC>
-    <RLOAD>E</RLOAD>
+    <APPL>X</APPL>
     <FIXPT>X</FIXPT>
+    <LDBNAME>D$S</LDBNAME>
     <UCCHECK>X</UCCHECK>
    </PROGDIR>
-   <TPOOL>
-    <item>
-     <ID>R</ID>
-     <ENTRY>test</ENTRY>
-     <LENGTH>4</LENGTH>
-    </item>
-   </TPOOL>
   </asx:values>
  </asx:abap>
 </abapGit>
