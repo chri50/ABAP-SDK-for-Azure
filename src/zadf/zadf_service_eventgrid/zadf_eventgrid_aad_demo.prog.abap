@@ -36,7 +36,7 @@ DATA:
 TRY.
     CALL METHOD zcl_adf_service_factory=>create
       EXPORTING
-        iv_interface_id        = 'DEMO_AAD' " Generate the token
+        iv_interface_id        = 'VIK_AAD' " Generate the token
         iv_business_identifier = 'AAD_TOKEN'
       RECEIVING
         ro_service             = lo_oref.
@@ -68,7 +68,7 @@ ENDIF.
 
 TRY.
 **Calling Factory method to instantiate eventgrid client
-    oref = zcl_adf_service_factory=>create( iv_interface_id = 'DEMO_EGRID'
+    oref = zcl_adf_service_factory=>create( iv_interface_id = 'VIK_EGRID'
                                             iv_business_identifier = filter ).
     oref_eventgrid ?= oref.
 
@@ -108,7 +108,7 @@ TRY.
 
       APPEND ls_payload TO lt_payload.
 
-      oref_eventgrid->set_eventgrid_schema( EXPORTING it_egrid_schema = lt_payload
+      oref_eventgrid->set_eventgrid_schema_json( EXPORTING it_egrid_schema = lt_payload
                                             RECEIVING rv_xstring      = DATA(lv_pxstring) ).
 
       wa_headers-name = 'Authorization'.

@@ -546,7 +546,7 @@ CLASS ZCL_ADF_SERVICE_FILES IMPLEMENTATION.
               xml_table = lt_xml_info
               return    = lt_return
             EXCEPTIONS
-              OTHERS    = 0.
+              OTHERS    = 1.
           IF sy-subrc EQ 0.
             DELETE lt_xml_info WHERE type NE 'V'.
           ENDIF.
@@ -778,16 +778,15 @@ CLASS ZCL_ADF_SERVICE_FILES IMPLEMENTATION.
     IF gv_storage_account IS INITIAL.
       RAISE EXCEPTION TYPE zcx_adf_service_files
         EXPORTING
-          textid       = zcx_adf_service_files=>storage_account_not_set
-          interface_id = gv_interface_id.
+          textid       = zcx_adf_service_files=>storage_account_not_set.
+*          interface_id = gv_interface_id.
     ENDIF.
 
 *   Check File Share
     IF gv_file_share IS INITIAL.
       RAISE EXCEPTION TYPE zcx_adf_service_files
         EXPORTING
-          textid       = zcx_adf_service_files=>file_share_not_set
-          interface_id = gv_interface_id.
+          textid       = zcx_adf_service_files=>file_share_not_set.
     ENDIF.
   ENDMETHOD.
 ENDCLASS.

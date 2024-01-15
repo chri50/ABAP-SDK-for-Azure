@@ -368,8 +368,6 @@ CLASS ZCL_REST_FRAMEWORK IMPLEMENTATION.
     DATA:
       lw_adf_config  TYPE zadf_config,
       lv_url         TYPE string,
-      lt_ranges_tab  TYPE rseloption,
-      lwa_ranges_tab TYPE rsdsselopt,
       format         TYPE i,
       lv_resource    TYPE string,
       lv_client_id   TYPE string.
@@ -398,6 +396,7 @@ CLASS ZCL_REST_FRAMEWORK IMPLEMENTATION.
       lv_resource = iv_resource.
       lv_resource = escape( val = lv_resource format = format ).
       CONCATENATE '&resource=' lv_resource INTO lv_resource.
+
       CONCATENATE lv_url lv_resource INTO lv_url.
       CONDENSE lv_url NO-GAPS.
     ENDIF.

@@ -28,7 +28,7 @@ DATA:
 
 TRY.
 **Calling Factory method to instantiate eventgrid client
-    oref = zcl_adf_service_factory=>create( iv_interface_id = 'DEMO_EGRID'
+    oref = zcl_adf_service_factory=>create( iv_interface_id = 'VIK_EGRID'
                                             iv_business_identifier = filter ).
     oref_eventgrid ?= oref.
 
@@ -41,7 +41,7 @@ TRY.
 
 *Sample data population for sending it to Azure eventgrid
     SELECT  objectclas, objectid
-         FROM cdhdr UP TO 10 ROWS
+         FROM cdhdr UP TO 2 ROWS
          INTO TABLE @DATA(lt_data).
     IF sy-subrc EQ 0.
 
@@ -64,12 +64,12 @@ TRY.
                   subject          = 'SAP/SALES/Billing DOC'    " Mandatory( Publisher-defined path to the event subject) Like
                                                                 " 'SAP/SALES/Billing DOC'
                   "eventtime        = lv_current_timestamp      " Mandatory( The time the event is generated based on the provider's UTC time.
-                  data             = lv1_string                 " Optional ( Like Billing data in Json string )
+                  data             = lv1_string                " Optional ( Like Billing data in Json string )
              ) .
 
       APPEND ls_payload TO lt_payload.
 
-      oref_eventgrid->set_eventgrid_schema( EXPORTING it_egrid_schema = lt_payload
+      oref_eventgrid->set_eventgrid_schema_json( EXPORTING it_egrid_schema = lt_payload
                                             RECEIVING rv_xstring      = DATA(lv_pxstring) ).
 
 **Sending Converted SAP data to Azure eventgrid
