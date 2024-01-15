@@ -14,7 +14,7 @@
 TABLES:  zrest_monitor."KRANKAM 10/23/2019
 TYPES: BEGIN OF gty_zrest_monitor, "(+)v-pralav SMTK906666
          mandt type mandt,
-         zmessageid TYPE zmid,
+         zmessageid TYPE zazmid,
        END OF gty_zrest_monitor.
 
 DATA gv_ext_cnt   TYPE i.
