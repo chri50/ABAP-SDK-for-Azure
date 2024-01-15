@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DD04V>
-    <ROLLNAME>ZPSTATUS</ROLLNAME>
+    <ROLLNAME>ZAZPSTATUS</ROLLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
-    <DOMNAME>ZPSTATUS</DOMNAME>
+    <DOMNAME>ZAZPSTATUS</DOMNAME>
     <HEADLEN>20</HEADLEN>
     <SCRLEN1>10</SCRLEN1>
     <DDTEXT>Stores Processing status</DDTEXT>
